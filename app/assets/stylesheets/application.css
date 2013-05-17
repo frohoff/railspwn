@@ -14,5 +14,13 @@
 
 
 @import url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css");
+/*@import url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css");*/
+
 
 body { margin: 20px }
+body { padding-top: 60px; }
+label { display:inline }
+h2 { margin-bottom: 30px; }
+h4 { margin-bottom: 20px; }
+code { margin-top: 10px; margin-bottom: 10px; padding: 10px;}
+

@@ -1,7 +1,1 @@
-<h3>Files available for download</h3>
-<ul>
-<% @files.each do |f| %>
-  <li><%= link_to f, :controller => "file", :action => "show", :file => f %></li>
-<% end %>
-</ul>
-	
+<% content_for :title, "Welcome to RailsPwn" %>

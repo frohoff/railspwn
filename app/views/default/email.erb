@@ -1,4 +1,4 @@
-<h3>Email Verification</h3>
+<% content_for :title, "Email Verification" %>
 <% if session[:token] %>
 <p>Paste the token from your email into the text box below and submit the form to verify your email address.</p>
 	<%= form_tag(:action => :email) do %>

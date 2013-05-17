@@ -14,10 +14,10 @@ Railspwn::Application.routes.draw do
   #   resources :file
   #root :to => 'file#show'
   match '' => 'default#default'
-  match 'file' => 'default#file'
   match 'admin' => 'default#admin'
   match 'email' => 'default#email'
   match 'store' => 'default#store'
+  match 'files' => 'default#files'
 
 
   # Sample resource route with options:

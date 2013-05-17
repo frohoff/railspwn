@@ -2,12 +2,11 @@ class DefaultController < ApplicationController
   def default
   end
 
-  def file
+  def files
     if params[:file]
       send_file "files/#{params[:file]}"
     else
       @files = Dir.entries("files").select { |fn| fn && !fn.start_with?('.') }
-      puts @files
     end
   end
 
@@ -23,6 +22,7 @@ class DefaultController < ApplicationController
       end
     elsif params[:logout]
       session.delete(:admin)
+      flash[:info] = 'Logged Out'
       redirect_to :admin
     else
       if session[:admin]

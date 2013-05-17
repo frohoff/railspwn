@@ -1,8 +1,10 @@
-<h3>Admin Area</h3>
+<% content_for :title, "Admin Area" %>
 <% if session[:admin] %>
-	<p><%= link_to('Logout', :logout => true) %></p>
 	<h4>Super Secret Information:</h4>
 	<code><%= @secret %></code>
+	<br>
+	<br>
+	<p><%= link_to('Logout', :logout => true) %></p>
 <% else %>
 	<%= form_tag(:action => :admin) do %>
 		<%= label_tag(:password, 'Password:') %>
