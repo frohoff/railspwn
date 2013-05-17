@@ -4,28 +4,28 @@ class DefaultController < ApplicationController
 
   def files
     if params[:file]
-      send_file "files/#{params[:file]}"
+      send_file "files/#{params[:file]}", :type => 'text/plain', :disposition => 'inline'
     else
       @files = Dir.entries("files").select { |fn| fn && !fn.start_with?('.') }
     end
   end
 
   def admin
-    if params[:password]
-      if params[:password] == 'letmein'
-        session[:admin] = true
-        flash[:success] = 'Password Accepted'
+    if params[:username] && params[:password]
+      if params[:username] == 'admin' && params[:password] == 'letmein'
+        session[:user] = 'admin'
+        flash[:success] = "Password Accepted. Logged in as admin"
         redirect_to :admin
       else
         flash[:error] = 'Bad Password'
         redirect_to :admin
       end
     elsif params[:logout]
-      session.delete(:admin)
+      session.delete(:user)
       flash[:info] = 'Logged Out'
       redirect_to :admin
     else
-      if session[:admin]
+      if session[:user] == 'admin'
         @secret = "The meaning of life and everything is '42'" 
       else
         render :admin, :status => :forbidden
