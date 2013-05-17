@@ -5,9 +5,18 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <style>
+    label { display:inline }
+  </style>
 </head>
 <body>
-
+ <% [:info, :error, :success].each do |key| %>
+   <% if flash[key] %>
+   <div class="<%= key %> alert alert-<%= key %>" id="flash">
+     <%= flash[key] %>
+   </div>
+   <% end %>
+ <% end %>
 <%= yield %>
 
 </body>

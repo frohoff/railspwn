@@ -13,7 +13,11 @@ Railspwn::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :file
   #root :to => 'file#show'
-  match '' => 'file#show'
+  match '' => 'default#default'
+  match 'file' => 'default#file'
+  match 'admin' => 'default#admin'
+  match 'email' => 'default#email'
+  match 'store' => 'default#store'
 
 
   # Sample resource route with options:

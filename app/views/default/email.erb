@@ -1,0 +1,16 @@
+<h3>Email Verification</h3>
+<% if session[:token] %>
+<p>Paste the token from your email into the text box below and submit the form to verify your email address.</p>
+	<%= form_tag(:action => :email) do %>
+		<%= label_tag(:token, 'Token:') %>
+		<%= text_field_tag(:token) %>
+		<%= submit_tag 'Validate Token' %>
+	<% end %>
+<% else %>
+<p>Please provide your email address so we can send you a token to verify that you own the supplied address.</p>
+	<%= form_tag(:action => :email) do %>
+		<%= label_tag(:email, 'Email Address:') %>
+		<%= text_field_tag(:email) %>
+		<%= submit_tag 'Verify Email' %>
+	<% end %>
+<% end %>	
