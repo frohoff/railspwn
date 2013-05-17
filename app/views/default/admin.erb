@@ -6,9 +6,9 @@
 	<br>
 	<p><%= link_to('Logout', :logout => true) %></p>
 <% else %>
-	<%= form_tag(:action => :admin) do %>
+	<%= form_tag({},{:class => 'form-inline'}) do %>
 		<%= label_tag(:password, 'Password:') %>
 		<%= password_field_tag(:password) %>
-		<%= submit_tag 'Login' %>
+		<%= submit_tag 'Login', :class => 'btn' %>
 	<% end %>
 <% end %>	

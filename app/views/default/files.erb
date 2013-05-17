@@ -1,7 +1,7 @@
 <% content_for(:title,"Files") %>
 <h4>Available for Download:</h4>
 <ul>
-<% @files.each do |f| %>
+<% @files.sort.each do |f| %>
   <li><%= link_to f, :file => f %></li>
 <% end %>
 </ul>

@@ -5,17 +5,17 @@
 	<iframe width="420" height="315" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
 <% end %>	
 	<p>
-	<%= form_tag() do %>
+	<%= form_tag({},{:class => 'form-inline'}) do %>
 		<%= label_tag(:cc, 'CC#:') %>
 		<%= text_field_tag(:cc) %>
 		<%= label_tag(:credits, 'Credits:') %>
 		<%= text_field_tag(:credits) %>
-		<%= submit_tag 'Refill Credits' %>
+		<%= submit_tag 'Refill Credits', :class => 'btn' %>
 	<% end %>
 	</p>
 	<p>
-	<%= form_tag() do %>
+	<%= form_tag({},{:class => 'form-inline'}) do %>
 		<%= hidden_field_tag(:buy, 'true') %>
-		<%= submit_tag 'Buy a Video (10 Credits)' %>
+		<%= submit_tag 'Buy a Video (10 Credits)', :class => 'btn' %>
 	<% end %>
 	</p>
